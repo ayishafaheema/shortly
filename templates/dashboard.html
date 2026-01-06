@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL shortner</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <div class="form-page {% if short_code %}slide-up{% endif %}">
+
+        <h2>URL SHORTNER</h2>
+        <div class="form-wrapper">
+            <form method="POST" action="{{ url_for('dash.dashboard') }}">
+                <div class="url">
+                    <h4>Long URL</h4>
+                    <input type="url" name="long_url" placeholder="http://www.example.com/very/long/url" required>
+                </div>
+                <div class="row">
+                    <div class="custom">
+                        <h4>Custom Short Name</h4>
+                        <input 
+                            type="text" 
+                            name="custom_name" 
+                            placeholder="your-link">
+                        <small>short.ly/your-link</small>
+
+                    </div>
+
+                    <div class="expiry">
+                        <h4>Expiry</h4>
+                        <label><input type="radio" name="expiry" value="never" checked> Never</label><br>
+                        <label><input type="radio" name="expiry" value="1m"> 1 minute</label><br>
+                        <label><input type="radio" name="expiry" value="5m"> 5 minutes</label><br>
+                        <label><input type="radio" name="expiry" value="1d"> 1 day</label>
+                    </div>
+                </div>
+                <div class="shorten">
+                    <button type="submit">Shorten It</button>
+                </div>
+            </form>
+            </div>
+                {% if short_code %}
+                <div class="result-page">
+                    <div class="result-card">
+                        <p class="result-title">Your Short URL</p>
+                        <a href="http://short.ly/{{ short_code }}" target="_blank">
+                            short.ly/{{ short_code }}
+                        </a>
+                        <button onclick="copyLink()">Copy</button>
+                    </div>
+                </div>
+                {% endif %}
+                <script>
+                function copyLink() {
+                    navigator.clipboard.writeText("http://short.ly/{{ short_code }}");
+                    alert("Copied!");
+                }
+                </script>
+
+
+        </body>
+        </html>    

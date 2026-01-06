@@ -1,0 +1,154 @@
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #001C3D;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+
+/* Page title */
+h2 {
+    margin-top: 30px;
+    color: #ca0000;
+    font-family: cursive;
+}
+
+
+form {
+    display: block; 
+    max-width: 800px; 
+    width: 90%; 
+    margin: 30px auto; 
+    background-color: #fff;
+    padding: 30px 40px; 
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+
+/* Row container for horizontal layout */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* space between custom and expiry */
+    margin-top: 20px;
+}
+/* FORM PAGE: full-page slide effect */
+.form-page {
+    transition: margin-top 0.6s ease;
+}
+
+.form-page.slide-up {
+    margin-top: -100px;   /* lift form UP */
+}
+
+
+
+
+/* Each box inside the row */
+.custom, .expiry {
+    flex: 1; /* take equal width */
+    border: 2px solid #333;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-sizing: border-box;
+}
+
+/* Add margin between the two boxes if needed */
+.custom {
+    margin-right: 10px;
+}
+
+/* Long URL full width */
+.url {
+    border: 2px solid #333;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+/* Inputs */
+input[type="text"], input[type="url"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Shorten button */
+.shorten {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.shorten button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 6px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    background-color: #001C3D;
+}
+
+.shorten button:hover {
+    background-color: #333;
+    color: white;
+}
+
+.page-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.result-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+/* RESULT CARD pop animation */
+.result-card {
+    max-width: 1500px;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #004aad, #001C3D);
+    border-radius: 16px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+
+    transform: scale(0.6);
+    animation: popCenter 0.6s ease forwards 0.5s; /* delay so it appears after form slides up */
+}
+
+
+@keyframes popCenter {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}    
+
+.result-card a {
+    display: block;
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.result-title {
+    font-size: 14px;
+    opacity: 0.8;
+}
+.page-wrapper {
+    padding-top: 120px;   /* creates scrollable space */
+}
