@@ -38,5 +38,5 @@ Perfect for developers, marketers, or anyone who wants to share links efficientl
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/url-shortener.git
+git clone https://github.com/ayishafaheema/url-shortener.git
 cd url-shortener
